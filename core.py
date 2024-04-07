@@ -10,6 +10,11 @@ except ImportError:
     print('Try upgrading to Python3.')
     exit(1)
 
+from difflib import SequenceMatcher
+
+def similarity(a, b):
+    return SequenceMatcher(None, a, b).ratio()
+
 class RATPAPI:
     
     def __init__(self) -> None:
@@ -29,6 +34,7 @@ class RATPAPI:
                 fragment = ''
             )
         )
+
         self.base_times = 'https://api-iv.iledefrance-mobilites.fr/lines/v2/line:IDFM:{0}/stops/stop_area:IDFM:{1}/realTime'
         
         self.categ = [
@@ -37,6 +43,7 @@ class RATPAPI:
             'bus',
             'tramway',
         ]
+
         self.lines = {
             '1': 'C01371',
             '2': 'C01372',
@@ -65,15 +72,25 @@ class RATPAPI:
     def __get_formatted_time(self) -> str:
         return datetime.now().strftime('%Y-%m-%d')
     
-    def get_line_info(self, line: str, it: bool = True, complete: bool = False) -> dict:
+    def get_schedules(self, line: str, station_id: str = None, it: bool = True, complete: bool = False) -> dict:
         params = {
             'it': it,
             'complete': complete,
             'date': self.__get_formatted_time()
         }
-        res = requests.get(self.__get_url('schedules', self.lines[line], params))
+        if station_id:
+            res = requests.get(self.__get_url(f'stops/stop_area:IDFM:{station_id}/schedules', self.lines[line], params))
+        else:
+            res = requests.get(self.__get_url('schedules', self.lines[line], params))
         return res.json()
     
+    def get_station_id(self, line: str, station: str) -> str | None:
+        stations = self.get_stations(line)
+        for el in stations:
+            if similarity(el['name'], station) > 0.7:
+                return el['id'].split(':')[-1]
+        return None
+
     def get_stations(self, line: str, stop_points: bool = False, routes: bool = False) -> dict:
         params = {
             'stopPoints': stop_points,
@@ -82,8 +99,9 @@ class RATPAPI:
         res = requests.get(self.__get_url('stops', self.lines[line], params))
         return res.json()
     
+    def get_real_time(self, line: str, station_id: str):
+        return requests.get('https://api-iv.iledefrance-mobilites.fr/lines/line:IDFM:C01374/stops/stop_area:IDFM:71264/schedules?date=2024-04-07&it=true').json()
+
 if __name__ == '__main__':
     rapi = RATPAPI()
-    print(rapi.get_line_info('1'))
-    print('\n------------\n')
-    print(rapi.get_stations('FUN'))
+    print(rapi.get_station_id('4', 'bagneux luice aubrac'))
