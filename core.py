@@ -100,58 +100,48 @@ class RATPAPI:
         res = requests.get(self.__get_url('stops', self.lines[line], params))
         return res.json()
     
-    def init_stations(self):
+    def load_stations(self):
         url = "https://data.iledefrance-mobilites.fr/explore/dataset/referentiel-des-lignes/download/?format=json&timezone=Europe/Berlin&lang=fr"
 
         res = requests.get(url).text
 
         parsed_data = json.loads(res)
 
-        train_lines = {}
-        bus_lines = {}
-        metro_lines = {}
-        tramway_lines = {}
+        lines = {
+            'train': {},
+            'bus': {},
+            'metro': {},
+            'tramway': {}
+        }
+
         conversion_table = { "metro": {}, "tramway": {}, "bus": {}, "train": {}}
-        conv = {"metro": "metro", "tram": "tramway", "funicular": "metro", "bus": "bus", "rail": "train"}
+        conv = { "metro": "metro", "tram": "tramway", "funicular": "metro", "bus": "bus", "rail": "train" }
 
         for entry in parsed_data:
             fields = entry.get("fields", {})
             name_line = fields.get("name_line")
             id_line = fields.get("id_line")
             transport_mode = fields.get("transportmode")
+
             line_data = {
                 "shortname_groupoflines": fields.get("shortname_groupoflines"),
                 "name_line": name_line,
                 "operatorname": fields.get("operatorname"),
                 "networkname": fields.get("networkname")
             }
+
             conversion_table[conv[transport_mode]][name_line] = id_line
-            if conv[transport_mode] == "train":
-                train_lines[id_line] = line_data
-            elif conv[transport_mode] == "bus":
-                bus_lines[id_line] = line_data
-            elif conv[transport_mode] == "metro":
-                metro_lines[id_line] = line_data
-            elif conv[transport_mode] == "tramway":
-                tramway_lines[id_line] = line_data
+            
+            transport = conv[transport_mode]
+            lines[transport][id_line] = line_data
 
-        with open("train_lines.json", "w") as f:
-            json.dump(train_lines, f, indent=2)
-
-        with open("bus_lines.json", "w") as f:
-            json.dump(bus_lines, f, indent=2)
-
-        with open("metro_lines.json", "w") as f:
-            json.dump(metro_lines, f, indent=2)
-
-        with open("tramway_lines.json", "w") as f:
-            json.dump(tramway_lines, f, indent=2)
-        with open("conversion_table.json", "w") as f:
-            json.dump(conversion_table, f, indent=2)
+        for transport in ('train', 'bus', 'metro', 'tramway'):
+            with open(f'{transport}_lines.json', 'w') as f:
+                json.dump(lines[transport], f, indent = 4)
 
     def get_real_time(self, line: str, station_id: str):
         return requests.get('https://api-iv.iledefrance-mobilites.fr/lines/line:IDFM:C01374/stops/stop_area:IDFM:71264/schedules?date=2024-04-07&it=true').json()
 
 
 if __name__ == '__main__':
-    rapi = RATPAPI().init_stations()
+    rapi = RATPAPI().load_stations()
