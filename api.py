@@ -2,6 +2,19 @@ from flask import Flask, jsonify
 from flasgger import Swagger
 
 app = Flask(__name__)
+
+app.config['SWAGGER'] = {
+    "swagger_version": "2.0",
+    "title": "RATP API",
+    "version": "1.0",
+    "description": "A REST API for the RATP - Iledefrance mobilités",
+    "headers": [
+        ('Access-Control-Allow-Origin', '*'),
+        ('Access-Control-Allow-Methods', "GET, POST, PUT, DELETE, OPTIONS"),
+        ('Access-Control-Allow-Credentials', "true"),
+    ],
+}
+
 swagger = Swagger(app)
 
 TRANSPORT_TYPES = ['metro', 'train', 'tramway', 'bus']
@@ -143,23 +156,7 @@ def get_schedules(type, code, station, way):
           - bus
           
       - name: code
-        in: path
-        type: string
-        required: true
-        description: The code of transport line (e.g. 8)
-      - name: station
-        in: path
-        type: string
-        required: true
-        description: Slug of the station name (e.g. bonne+nouvelle)
-      - name: way
-        in: path
-        type: string
-        required: true
-        description: Way on the line
-        enum: 
-          - A
-          - R
+        in: pathC'est cool ça rend bien, faudra que tu me 
           - A+R
     responses:
       200:

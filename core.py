@@ -1,6 +1,7 @@
 import requests
 from datetime import datetime
 from collections import namedtuple
+from typing import Literal
 import json
 import pprint
 
@@ -15,7 +16,7 @@ except ImportError:
 
 from difflib import SequenceMatcher
 
-def similarity(a, b):
+def similarity(a: str, b: str):
     return SequenceMatcher(None, a, b).ratio()
 
 class RATPAPI:
@@ -49,16 +50,16 @@ class RATPAPI:
     def __get_formatted_time(self) -> str:
         return datetime.now().strftime('%Y-%m-%d')
     
-    def get_schedules(self, line: str, station_id: str = None, it: bool = True, complete: bool = False) -> dict:
+    def get_schedules(self, line_id: str, station_id: str = None, it: bool = True, complete: bool = False) -> dict:
         params = {
             'it': it,
             'complete': complete,
             'date': self.__get_formatted_time()
         }
         if station_id:
-            res = requests.get(self.__get_url(f'stops/stop_area:IDFM:{station_id}/schedules', self.lines[line], params))
+            res = requests.get(self.__get_url(f'stops/stop_area:IDFM:{station_id}/schedules', line_id, params))
         else:
-            res = requests.get(self.__get_url('schedules', self.lines[line], params))
+            res = requests.get(self.__get_url('schedules', line_id, params))
         return res.json()
     
     def get_station_id(self, line: str, station: str) -> str | None:
@@ -71,13 +72,12 @@ class RATPAPI:
     def get_line_id(self, ltype, name):
         return self.lines[ltype][name]
 
-    def get_stations(self, line: str, stop_points: bool = False, routes: bool = False) -> dict:
+    def get_stations(self, line_id: str, stop_points: bool = False, routes: bool = False) -> dict:
         params = {
             'stopPoints': stop_points,
             'routes' : routes
         }
-        res = requests.get(self.__get_url('stops', line, params))
-
+        res = requests.get(self.__get_url('stops', line_id, params))
         return res.json()
     
     def load_stations(self):
@@ -119,9 +119,14 @@ class RATPAPI:
             with open(f'data/{transport}_lines.json', 'w') as f:
                 json.dump(lines[transport], f, indent = 4)
 
-    def get_real_time(self, line: str, station_id: str):
-        return requests.get('https://api-iv.iledefrance-mobilites.fr/lines/line:IDFM:C01374/stops/stop_area:IDFM:71264/schedules?date=2024-04-07&it=true').json()
-
+    def get_real_time(self, line_id: str, station_id: str, it: bool = True):
+        requests.get('https://api-iv.iledefrance-mobilites.fr/lines/line:IDFM:C01374/stops/stop_area:IDFM:71264/schedules?date=2024-04-07&it=true').json()
+        params = {
+            'date': self.__get_formatted_time(),
+            'it': it
+        }
+        res = requests.get(self.__get_url(f'stops/stop_area:IDFM:{station_id}/schedules', line_id, params))
+        return res.json()
 
 if __name__ == '__main__':
     rapi = RATPAPI()
