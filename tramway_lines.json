@@ -1,86 +1,86 @@
 {
-  "C01843": {
-    "shortname_groupoflines": "T4",
-    "name_line": "T4",
-    "operatorname": "SNCF",
-    "networkname": "Transilien"
-  },
-  "C01795": {
-    "shortname_groupoflines": "T8",
-    "name_line": "T8",
-    "operatorname": "RATP",
-    "networkname": null
-  },
-  "C02528": {
-    "shortname_groupoflines": "T10",
-    "name_line": "T10",
-    "operatorname": "RD Bi\u00e8vre",
-    "networkname": "Bi\u00e8vre"
-  },
-  "C01390": {
-    "shortname_groupoflines": "T2",
-    "name_line": "T2",
-    "operatorname": "RATP",
-    "networkname": null
-  },
-  "C01679": {
-    "shortname_groupoflines": "T3b",
-    "name_line": "T3b",
-    "operatorname": "RATP",
-    "networkname": null
-  },
-  "C01999": {
-    "shortname_groupoflines": "T11",
-    "name_line": "T11",
-    "operatorname": "SNCF",
-    "networkname": "Transilien"
-  },
-  "C01389": {
-    "shortname_groupoflines": "T1",
-    "name_line": "T1",
-    "operatorname": "RATP",
-    "networkname": null
-  },
-  "C02344": {
-    "shortname_groupoflines": "T13",
-    "name_line": "T13",
-    "operatorname": "SNCF",
-    "networkname": "Transilien"
-  },
-  "C02529": {
-    "shortname_groupoflines": "T12",
-    "name_line": "T12",
-    "operatorname": "SNCF",
-    "networkname": "Transilien"
-  },
-  "C01794": {
-    "shortname_groupoflines": "T6",
-    "name_line": "T6",
-    "operatorname": "RATP",
-    "networkname": null
-  },
-  "C01684": {
-    "shortname_groupoflines": "T5",
-    "name_line": "T5",
-    "operatorname": "RATP",
-    "networkname": null
-  },
-  "C01774": {
-    "shortname_groupoflines": "T7",
-    "name_line": "T7",
-    "operatorname": "RATP",
-    "networkname": null
-  },
-  "C01391": {
-    "shortname_groupoflines": "T3a",
-    "name_line": "T3a",
-    "operatorname": "RATP",
-    "networkname": null
-  },
-  "C02317": {
-    "shortname_groupoflines": "T9 - Paris Porte de Choisy - Orly Gaston Viens",
-    "name_line": "T9",
-    "operatorname": "Keolis Ouest Val-de-Marne",
-    "networkname": null
-  }
+    "C01843": {
+        "shortname_groupoflines": "T4",
+        "name_line": "T4",
+        "operatorname": "SNCF",
+        "networkname": "Transilien"
+    },
+    "C01795": {
+        "shortname_groupoflines": "T8",
+        "name_line": "T8",
+        "operatorname": "RATP",
+        "networkname": null
+    },
+    "C02528": {
+        "shortname_groupoflines": "T10",
+        "name_line": "T10",
+        "operatorname": "RD Bi\u00e8vre",
+        "networkname": "Bi\u00e8vre"
+    },
+    "C01390": {
+        "shortname_groupoflines": "T2",
+        "name_line": "T2",
+        "operatorname": "RATP",
+        "networkname": null
+    },
+    "C01679": {
+        "shortname_groupoflines": "T3b",
+        "name_line": "T3b",
+        "operatorname": "RATP",
+        "networkname": null
+    },
+    "C01999": {
+        "shortname_groupoflines": "T11",
+        "name_line": "T11",
+        "operatorname": "SNCF",
+        "networkname": "Transilien"
+    },
+    "C01389": {
+        "shortname_groupoflines": "T1",
+        "name_line": "T1",
+        "operatorname": "RATP",
+        "networkname": null
+    },
+    "C02344": {
+        "shortname_groupoflines": "T13",
+        "name_line": "T13",
+        "operatorname": "SNCF",
+        "networkname": "Transilien"
+    },
+    "C02529": {
+        "shortname_groupoflines": "T12",
+        "name_line": "T12",
+        "operatorname": "SNCF",
+        "networkname": "Transilien"
+    },
+    "C01794": {
+        "shortname_groupoflines": "T6",
+        "name_line": "T6",
+        "operatorname": "RATP",
+        "networkname": null
+    },
+    "C01684": {
+        "shortname_groupoflines": "T5",
+        "name_line": "T5",
+        "operatorname": "RATP",
+        "networkname": null
+    },
+    "C01774": {
+        "shortname_groupoflines": "T7",
+        "name_line": "T7",
+        "operatorname": "RATP",
+        "networkname": null
+    },
+    "C01391": {
+        "shortname_groupoflines": "T3a",
+        "name_line": "T3a",
+        "operatorname": "RATP",
+        "networkname": null
+    },
+    "C02317": {
+        "shortname_groupoflines": "T9 - Paris Porte de Choisy - Orly Gaston Viens",
+        "name_line": "T9",
+        "operatorname": "Keolis Ouest Val-de-Marne",
+        "networkname": null
+    }
 }

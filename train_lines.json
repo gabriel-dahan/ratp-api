@@ -1,158 +1,158 @@
 {
-  "C02368": {
-    "shortname_groupoflines": "TER Centre - Val de Loire (Ligne R)",
-    "name_line": "TER Centre - Val de Loire",
-    "operatorname": "SNCF",
-    "networkname": "TER"
-  },
-  "C01736": {
-    "shortname_groupoflines": "Transilien N",
-    "name_line": "N",
-    "operatorname": "SNCF",
-    "networkname": "Transilien"
-  },
-  "C00563": {
-    "shortname_groupoflines": "CDG VAL",
-    "name_line": "CDG VAL",
-    "operatorname": "ADP",
-    "networkname": null
-  },
-  "C01388": {
-    "shortname_groupoflines": "ORLYVAL",
-    "name_line": "ORLYVAL",
-    "operatorname": "RATP",
-    "networkname": null
-  },
-  "C02375": {
-    "shortname_groupoflines": "TER Normandie (Ligne J)",
-    "name_line": "TER Normandie",
-    "operatorname": "SNCF",
-    "networkname": "TER"
-  },
-  "C01744": {
-    "shortname_groupoflines": "TER Centre - Val de Loire (Ligne N)",
-    "name_line": "TER Centre - Val de Loire",
-    "operatorname": "SNCF",
-    "networkname": "TER"
-  },
-  "C01745": {
-    "shortname_groupoflines": "TER Bourgogne - Franche-Comt\u00e9 (Ligne R)",
-    "name_line": "TER Bourgogne - Franche-Comt\u00e9",
-    "operatorname": "SNCF",
-    "networkname": "TER"
-  },
-  "C01729": {
-    "shortname_groupoflines": "RER E",
-    "name_line": "E",
-    "operatorname": "SNCF",
-    "networkname": "RER"
-  },
-  "C01741": {
-    "shortname_groupoflines": "Transilien U",
-    "name_line": "U",
-    "operatorname": "SNCF",
-    "networkname": "Transilien"
-  },
-  "C01857": {
-    "shortname_groupoflines": "TER Centre - Val-de-Loire (Ligne C)",
-    "name_line": "TER Centre - Val-de-Loire",
-    "operatorname": "SNCF",
-    "networkname": "TER"
-  },
-  "C02372": {
-    "shortname_groupoflines": "TER Hauts-de-France (Ligne D)",
-    "name_line": "TER Hauts-de-France",
-    "operatorname": "SNCF",
-    "networkname": "TER"
-  },
-  "C01728": {
-    "shortname_groupoflines": "RER D",
-    "name_line": "D",
-    "operatorname": "SNCF",
-    "networkname": "RER"
-  },
-  "C01740": {
-    "shortname_groupoflines": "Transilien L",
-    "name_line": "L",
-    "operatorname": "SNCF",
-    "networkname": "Transilien"
-  },
-  "C01737": {
-    "shortname_groupoflines": "Transilien H",
-    "name_line": "H",
-    "operatorname": "SNCF",
-    "networkname": "Transilien"
-  },
-  "C01738": {
-    "shortname_groupoflines": "Transilien K",
-    "name_line": "K",
-    "operatorname": "SNCF",
-    "networkname": "Transilien"
-  },
-  "C01742": {
-    "shortname_groupoflines": "RER A",
-    "name_line": "A",
-    "operatorname": "SNCF",
-    "networkname": "RER"
-  },
-  "C01730": {
-    "shortname_groupoflines": "Transilien P",
-    "name_line": "P",
-    "operatorname": "SNCF",
-    "networkname": "Transilien"
-  },
-  "C01743": {
-    "shortname_groupoflines": "RER B",
-    "name_line": "B",
-    "operatorname": "SNCF",
-    "networkname": "RER"
-  },
-  "C01727": {
-    "shortname_groupoflines": "RER C",
-    "name_line": "C",
-    "operatorname": "SNCF",
-    "networkname": "RER"
-  },
-  "C01731": {
-    "shortname_groupoflines": "Transilien R",
-    "name_line": "R",
-    "operatorname": "SNCF",
-    "networkname": "Transilien"
-  },
-  "C01748": {
-    "shortname_groupoflines": "TER Normandie (Ligne J)",
-    "name_line": "TER Normandie",
-    "operatorname": "SNCF",
-    "networkname": "TER"
-  },
-  "C01863": {
-    "shortname_groupoflines": "TER Hauts-de-France (Ligne K)",
-    "name_line": "TER Hauts-de-France",
-    "operatorname": "SNCF",
-    "networkname": "TER"
-  },
-  "C02370": {
-    "shortname_groupoflines": "TER Normandie (Ligne N)",
-    "name_line": "TER Normandie",
-    "operatorname": "SNCF",
-    "networkname": "TER"
-  },
-  "C01746": {
-    "shortname_groupoflines": "TER Hauts-de-France (Ligne H ou D/H)",
-    "name_line": "TER Hauts-de-France",
-    "operatorname": "SNCF",
-    "networkname": "TER"
-  },
-  "C01739": {
-    "shortname_groupoflines": "Transilien J",
-    "name_line": "J",
-    "operatorname": "SNCF",
-    "networkname": "Transilien"
-  },
-  "C01747": {
-    "shortname_groupoflines": "TER Grand-Est (Ligne P)",
-    "name_line": "TER Grand-Est",
-    "operatorname": "SNCF",
-    "networkname": "TER"
-  }
+    "C02368": {
+        "shortname_groupoflines": "TER Centre - Val de Loire (Ligne R)",
+        "name_line": "TER Centre - Val de Loire",
+        "operatorname": "SNCF",
+        "networkname": "TER"
+    },
+    "C01736": {
+        "shortname_groupoflines": "Transilien N",
+        "name_line": "N",
+        "operatorname": "SNCF",
+        "networkname": "Transilien"
+    },
+    "C00563": {
+        "shortname_groupoflines": "CDG VAL",
+        "name_line": "CDG VAL",
+        "operatorname": "ADP",
+        "networkname": null
+    },
+    "C01388": {
+        "shortname_groupoflines": "ORLYVAL",
+        "name_line": "ORLYVAL",
+        "operatorname": "RATP",
+        "networkname": null
+    },
+    "C02375": {
+        "shortname_groupoflines": "TER Normandie (Ligne J)",
+        "name_line": "TER Normandie",
+        "operatorname": "SNCF",
+        "networkname": "TER"
+    },
+    "C01744": {
+        "shortname_groupoflines": "TER Centre - Val de Loire (Ligne N)",
+        "name_line": "TER Centre - Val de Loire",
+        "operatorname": "SNCF",
+        "networkname": "TER"
+    },
+    "C01745": {
+        "shortname_groupoflines": "TER Bourgogne - Franche-Comt\u00e9 (Ligne R)",
+        "name_line": "TER Bourgogne - Franche-Comt\u00e9",
+        "operatorname": "SNCF",
+        "networkname": "TER"
+    },
+    "C01729": {
+        "shortname_groupoflines": "RER E",
+        "name_line": "E",
+        "operatorname": "SNCF",
+        "networkname": "RER"
+    },
+    "C01741": {
+        "shortname_groupoflines": "Transilien U",
+        "name_line": "U",
+        "operatorname": "SNCF",
+        "networkname": "Transilien"
+    },
+    "C01857": {
+        "shortname_groupoflines": "TER Centre - Val-de-Loire (Ligne C)",
+        "name_line": "TER Centre - Val-de-Loire",
+        "operatorname": "SNCF",
+        "networkname": "TER"
+    },
+    "C02372": {
+        "shortname_groupoflines": "TER Hauts-de-France (Ligne D)",
+        "name_line": "TER Hauts-de-France",
+        "operatorname": "SNCF",
+        "networkname": "TER"
+    },
+    "C01728": {
+        "shortname_groupoflines": "RER D",
+        "name_line": "D",
+        "operatorname": "SNCF",
+        "networkname": "RER"
+    },
+    "C01740": {
+        "shortname_groupoflines": "Transilien L",
+        "name_line": "L",
+        "operatorname": "SNCF",
+        "networkname": "Transilien"
+    },
+    "C01737": {
+        "shortname_groupoflines": "Transilien H",
+        "name_line": "H",
+        "operatorname": "SNCF",
+        "networkname": "Transilien"
+    },
+    "C01738": {
+        "shortname_groupoflines": "Transilien K",
+        "name_line": "K",
+        "operatorname": "SNCF",
+        "networkname": "Transilien"
+    },
+    "C01742": {
+        "shortname_groupoflines": "RER A",
+        "name_line": "A",
+        "operatorname": "SNCF",
+        "networkname": "RER"
+    },
+    "C01730": {
+        "shortname_groupoflines": "Transilien P",
+        "name_line": "P",
+        "operatorname": "SNCF",
+        "networkname": "Transilien"
+    },
+    "C01743": {
+        "shortname_groupoflines": "RER B",
+        "name_line": "B",
+        "operatorname": "SNCF",
+        "networkname": "RER"
+    },
+    "C01727": {
+        "shortname_groupoflines": "RER C",
+        "name_line": "C",
+        "operatorname": "SNCF",
+        "networkname": "RER"
+    },
+    "C01731": {
+        "shortname_groupoflines": "Transilien R",
+        "name_line": "R",
+        "operatorname": "SNCF",
+        "networkname": "Transilien"
+    },
+    "C01748": {
+        "shortname_groupoflines": "TER Normandie (Ligne J)",
+        "name_line": "TER Normandie",
+        "operatorname": "SNCF",
+        "networkname": "TER"
+    },
+    "C01863": {
+        "shortname_groupoflines": "TER Hauts-de-France (Ligne K)",
+        "name_line": "TER Hauts-de-France",
+        "operatorname": "SNCF",
+        "networkname": "TER"
+    },
+    "C02370": {
+        "shortname_groupoflines": "TER Normandie (Ligne N)",
+        "name_line": "TER Normandie",
+        "operatorname": "SNCF",
+        "networkname": "TER"
+    },
+    "C01746": {
+        "shortname_groupoflines": "TER Hauts-de-France (Ligne H ou D/H)",
+        "name_line": "TER Hauts-de-France",
+        "operatorname": "SNCF",
+        "networkname": "TER"
+    },
+    "C01739": {
+        "shortname_groupoflines": "Transilien J",
+        "name_line": "J",
+        "operatorname": "SNCF",
+        "networkname": "Transilien"
+    },
+    "C01747": {
+        "shortname_groupoflines": "TER Grand-Est (Ligne P)",
+        "name_line": "TER Grand-Est",
+        "operatorname": "SNCF",
+        "networkname": "TER"
+    }
 }
