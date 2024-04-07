@@ -136,7 +136,7 @@ class RATPAPI:
             lines[transport][id_line] = line_data
 
         for transport in ('train', 'bus', 'metro', 'tramway'):
-            with open(f'{transport}_lines.json', 'w') as f:
+            with open(f'data/{transport}_lines.json', 'w') as f:
                 json.dump(lines[transport], f, indent = 4)
 
     def get_real_time(self, line: str, station_id: str):
