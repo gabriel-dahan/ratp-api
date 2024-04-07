@@ -1,0 +1,104 @@
+{
+    "C01377": {
+        "shortname_groupoflines": "7",
+        "name_line": "7",
+        "operatorname": "RATP",
+        "networkname": null
+    },
+    "C01385": {
+        "shortname_groupoflines": "Funiculaire",
+        "name_line": "FUNICULAIRE",
+        "operatorname": "RATP",
+        "networkname": null
+    },
+    "C01386": {
+        "shortname_groupoflines": "3 Bis",
+        "name_line": "3B",
+        "operatorname": "RATP",
+        "networkname": null
+    },
+    "C01378": {
+        "shortname_groupoflines": "8",
+        "name_line": "8",
+        "operatorname": "RATP",
+        "networkname": null
+    },
+    "C01376": {
+        "shortname_groupoflines": "6",
+        "name_line": "6",
+        "operatorname": "RATP",
+        "networkname": null
+    },
+    "C01381": {
+        "shortname_groupoflines": "11",
+        "name_line": "11",
+        "operatorname": "RATP",
+        "networkname": null
+    },
+    "C01375": {
+        "shortname_groupoflines": "5",
+        "name_line": "5",
+        "operatorname": "RATP",
+        "networkname": null
+    },
+    "C01371": {
+        "shortname_groupoflines": "1",
+        "name_line": "1",
+        "operatorname": "RATP",
+        "networkname": null
+    },
+    "C01374": {
+        "shortname_groupoflines": "4",
+        "name_line": "4",
+        "operatorname": "RATP",
+        "networkname": null
+    },
+    "C01380": {
+        "shortname_groupoflines": "10",
+        "name_line": "10",
+        "operatorname": "RATP",
+        "networkname": null
+    },
+    "C01372": {
+        "shortname_groupoflines": "2",
+        "name_line": "2",
+        "operatorname": "RATP",
+        "networkname": null
+    },
+    "C01373": {
+        "shortname_groupoflines": "3",
+        "name_line": "3",
+        "operatorname": "RATP",
+        "networkname": null
+    },
+    "C01382": {
+        "shortname_groupoflines": "12",
+        "name_line": "12",
+        "operatorname": "RATP",
+        "networkname": null
+    },
+    "C01383": {
+        "shortname_groupoflines": "13",
+        "name_line": "13",
+        "operatorname": "RATP",
+        "networkname": null
+    },
+    "C01379": {
+        "shortname_groupoflines": "9",
+        "name_line": "9",
+        "operatorname": "RATP",
+        "networkname": null
+    },
+    "C01384": {
+        "shortname_groupoflines": "14",
+        "name_line": "14",
+        "operatorname": "RATP",
+        "networkname": null
+    },
+    "C01387": {
+        "shortname_groupoflines": "7 Bis",
+        "name_line": "7B",
+        "operatorname": "RATP",
+        "networkname": null
+    }
+}
