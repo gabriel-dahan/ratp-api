@@ -1,6 +1,7 @@
 import requests
 from datetime import datetime
 from collections import namedtuple
+import json
 
 try:
     # Python 3
@@ -82,8 +83,55 @@ class RATPAPI:
         res = requests.get(self.__get_url('stops', self.lines[line], params))
         return res.json()
     
+    def init_stations(self):
+        url = "https://data.iledefrance-mobilites.fr/explore/dataset/referentiel-des-lignes/download/?format=json&timezone=Europe/Berlin&lang=fr"
+
+        res = requests.get(url).text
+
+        parsed_data = json.loads(res)
+
+        train_lines = {}
+        bus_lines = {}
+        metro_lines = {}
+        tramway_lines = {}
+        conversion_table = { "metro": {}, "tramway": {}, "bus": {}, "train": {}}
+        conv = {"metro": "metro", "tram": "tramway", "funicular": "metro", "bus": "bus", "rail": "train"}
+
+        for entry in parsed_data:
+            fields = entry.get("fields", {})
+            name_line = fields.get("name_line")
+            id_line = fields.get("id_line")
+            transport_mode = fields.get("transportmode")
+            line_data = {
+                "shortname_groupoflines": fields.get("shortname_groupoflines"),
+                "name_line": name_line,
+                "operatorname": fields.get("operatorname"),
+                "networkname": fields.get("networkname")
+            }
+            conversion_table[conv[transport_mode]][name_line] = id_line
+            if conv[transport_mode] == "train":
+                train_lines[id_line] = line_data
+            elif conv[transport_mode] == "bus":
+                bus_lines[id_line] = line_data
+            elif conv[transport_mode] == "metro":
+                metro_lines[id_line] = line_data
+            elif conv[transport_mode] == "tramway":
+                tramway_lines[id_line] = line_data
+
+        with open("train_lines.json", "w") as f:
+            json.dump(train_lines, f, indent=2)
+
+        with open("bus_lines.json", "w") as f:
+            json.dump(bus_lines, f, indent=2)
+
+        with open("metro_lines.json", "w") as f:
+            json.dump(metro_lines, f, indent=2)
+
+        with open("tramway_lines.json", "w") as f:
+            json.dump(tramway_lines, f, indent=2)
+        with open("conversion_table.json", "w") as f:
+            json.dump(conversion_table, f, indent=2)
+
+    
 if __name__ == '__main__':
-    rapi = RATPAPI()
-    print(rapi.get_line_info('1'))
-    print('\n------------\n')
-    print(rapi.get_stations('FUN'))
+    rapi = RATPAPI().init_stations()
