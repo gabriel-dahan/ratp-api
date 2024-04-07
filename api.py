@@ -4,7 +4,7 @@ from flasgger import Swagger
 app = Flask(__name__)
 swagger = Swagger(app)
 
-TRANSPORT_TYPES = ['metros', 'rers', 'tramways', 'buses', 'noctiliens']
+TRANSPORT_TYPES = ['metro', 'train', 'tramway', 'bus']
 
 @app.route('/destinations/<string:type>/<string:code>', methods=['GET'])
 def get_destinations(type, code):
@@ -16,13 +16,13 @@ def get_destinations(type, code):
         in: path
         type: string
         required: true
-        description: The type of transport (metros, rers, tramways, buses or noctiliens)
+        description: The type of transport (metro, train, tramway, bus)
         enum: 
-          - metros
-          - rers
-          - tramways
-          - buses
-          - noctiliens
+          - metro
+          - train
+          - tramway
+          - bus
+          
       - name: code
         in: path
         type: string
@@ -36,7 +36,7 @@ def get_destinations(type, code):
     """
 
     if type not in TRANSPORT_TYPES:
-        return jsonify({'message': 'Invalid transport type. Please choose among metros, rers, tramways, buses, noctiliens.'}), 400
+        return jsonify({'message': 'Invalid transport type. Please choose among metro, train, tramway, bus, noctiliens.'}), 400
     
 
     return jsonify({'message': f'Destinations for {type} line with code {code}'})
@@ -67,13 +67,13 @@ def get_lines_by_type(type):
         in: path
         type: string
         required: true
-        description: The type of transport (metros, rers, tramways, buses or noctiliens)
+        description: The type of transport (metro, train, tramway, bus)
         enum: 
-          - metros
-          - rers
-          - tramways
-          - buses
-          - noctiliens
+          - metro
+          - train
+          - tramway
+          - bus
+          
     responses:
       200:
         description: OK
@@ -82,7 +82,7 @@ def get_lines_by_type(type):
     """
 
     if type not in TRANSPORT_TYPES:
-        return jsonify({'message': 'Invalid transport type. Please choose among metros, rers, tramways, buses, noctiliens.'}), 400
+        return jsonify({'message': 'Invalid transport type. Please choose among metro, train, tramway, bus, noctiliens.'}), 400
     
 
     return jsonify({'message': f'All {type} lines from RATP network'})
@@ -99,13 +99,13 @@ def get_line_information(type, code):
         in: path
         type: string
         required: true
-        description: The type of transport (metros, rers, tramways, buses or noctiliens)
+        description: The type of transport (metro, train, tramway, bus)
         enum: 
-          - metros
-          - rers
-          - tramways
-          - buses
-          - noctiliens
+          - metro
+          - train
+          - tramway
+          - bus
+          
       - name: code
         in: path
         type: string
@@ -118,7 +118,7 @@ def get_line_information(type, code):
         description: Bad Request
     """
     if type not in TRANSPORT_TYPES:
-        return jsonify({'message': 'Invalid transport type. Please choose among metros, rers, tramways, buses, noctiliens.'}), 400
+        return jsonify({'message': 'Invalid transport type. Please choose among metro, train, tramway, bus, noctiliens.'}), 400
     
 
     return jsonify({'message': f'Information about {type} line with code {code}'})
@@ -135,13 +135,13 @@ def get_schedules(type, code, station, way):
         in: path
         type: string
         required: true
-        description: The type of transport (metros, rers, tramways, buses or noctiliens)
+        description: The type of transport (metro, train, tramway, bus)
         enum: 
-          - metros
-          - rers
-          - tramways
-          - buses
-          - noctiliens
+          - metro
+          - train
+          - tramway
+          - bus
+          
       - name: code
         in: path
         type: string
@@ -169,7 +169,7 @@ def get_schedules(type, code, station, way):
     """
 
     if type not in TRANSPORT_TYPES:
-        return jsonify({'message': 'Invalid transport type. Please choose among metros, rers, tramways, buses, noctiliens.'}), 400
+        return jsonify({'message': 'Invalid transport type. Please choose among metro, train, tramway, bus, noctiliens.'}), 400
 
     return jsonify({'message': f'Schedules at {station} station on {type} line with code {code} and way {way}'})
 
@@ -185,13 +185,13 @@ def get_stations(type, code):
         in: path
         type: string
         required: true
-        description: The type of transport (metros, rers, tramways, buses or noctiliens)
+        description: The type of transport (metro, train, tramway, bus)
         enum: 
-          - metros
-          - rers
-          - tramways
-          - buses
-          - noctiliens
+          - metro
+          - train
+          - tramway
+          - bus
+          
       - name: code
         in: path
         type: string
@@ -205,7 +205,7 @@ def get_stations(type, code):
     """
 
     if type not in TRANSPORT_TYPES:
-        return jsonify({'message': 'Invalid transport type. Please choose among metros, rers, tramways, buses, noctiliens.'}), 400
+        return jsonify({'message': 'Invalid transport type. Please choose among metro, train, tramway, bus, noctiliens.'}), 400
     
     return jsonify({'message': f'Stations of {type} line with code {code}'})
 
@@ -234,11 +234,11 @@ def get_traffic_by_type(type):
         in: path
         type: string
         required: true
-        description: The type of transport (metros, rers or tramways)
+        description: The type of transport (metro, train or tramway)
         enum: 
-          - metros
-          - rers
-          - tramways
+          - metro
+          - train
+          - tramway
     responses:
       200:
         description: OK
@@ -247,7 +247,7 @@ def get_traffic_by_type(type):
     """
 
     if type not in TRANSPORT_TYPES:
-        return jsonify({'message': 'Invalid transport type. Please choose among metros, rers, tramways.'}), 400
+        return jsonify({'message': 'Invalid transport type. Please choose among metro, train, tramway.'}), 400
     
     return jsonify({'message': f'Traffic of {type} from RATP network'})
 
@@ -263,11 +263,11 @@ def get_traffic_by_line(type, code):
         in: path
         type: string
         required: true
-        description: The type of transport (metros, rers or tramways)
+        description: The type of transport (metro, train or tramway)
         enum: 
-          - metros
-          - rers
-          - tramways
+          - metro
+          - train
+          - tramway
       - name: code
         in: path
         type: string
@@ -281,7 +281,7 @@ def get_traffic_by_line(type, code):
     """
 
     if type not in TRANSPORT_TYPES:
-        return jsonify({'message': 'Invalid transport type. Please choose among metros, rers, tramways.'}), 400
+        return jsonify({'message': 'Invalid transport type. Please choose among metro, train, tramway.'}), 400
     
 
     return jsonify({'message': f'Traffic of {type} line with code {code}'})
